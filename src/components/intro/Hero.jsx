@@ -12,7 +12,7 @@ const Hero = () => {
           Wynajmij samochód w jednej z najnowocześniejszych wypozyczalni na podkarpaciu! Szybko i bez zbędnych formalności.
         </p>
 
-        <button class="bg-purple-800 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded">
+        <button className="bg-purple-800 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded">
           Zapoznaj się z naszą ofertą
         </button>
 
