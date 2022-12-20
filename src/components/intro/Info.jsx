@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './CardInfo'
 import { HiLocationMarker } from "react-icons/hi";
-import { FaCarAlt, FaPlus, FaRegIdCard, FaArrowRight } from "react-icons/fa";
+import { FaCarAlt, FaPlus, FaRegIdCard } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 
 const Info = () => {
