@@ -1,47 +1,72 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 const Navbar = () => {
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
+  const stylesLink = 'px-16 py-4 text-2xl md:text-lg md:px-6 md:py-2 bg-darkgray rounded-xl';
+  const stylesLinkActive = 'px-16 py-4 text-2xl md:text-lg md:px-6 md:py-2 bg-white text-blackCoffee underline underline-offset-2 rounded-xl';
 
   return (
-    <nav className="sticky z-50 bg-darkgray flex border-b md:border-0 w-full top-0">
-      <div className="px-5 items-center mx-auto max-w-screen-xl">
-        <div className="flex items-center justify-between py-4 md:block">
-          <a href="#home">Logo</a>
+    <header className="sticky z-50 top-0 left-0 bg-gray">
+      <div className=" mx-auto max-w-screen-xl">
+        <div className="flex items-center justify-between py-4 md:px-10  ">
+          <div className="text-white border-2 rounded-md border-white cursor-pointer font-bold mx-4">
+            <h1 className="text-xl px-2 py-1">CarRentalio</h1>
+          </div>
 
-          <div className="lg:hidden">
+          <nav
+            className={`absolute bg-gray py-12 text-white px-5 md:py-0 flex flex-col md:flex-row md:static md:z-auto z-[-1] w-full md:w-auto items-center gap-7 text-lg ${
+              state ? "top-20" : "top-[-500px]"
+            } transition-all duration-500 ease-in `}
+          >
+            <NavLink
+              to="/"
+              className={({isActive}) => isActive ? stylesLinkActive : stylesLink}
+            >
+              Strona główna
+            </NavLink>
+
+            <NavLink
+              to="/offer"
+              className={({isActive}) => isActive ? stylesLinkActive : stylesLink}
+            >
+              Oferta
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({isActive}) => isActive ? stylesLinkActive : stylesLink}
+            >
+              O nas
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({isActive}) => isActive ? stylesLinkActive : stylesLink}
+            >
+              Kontakt
+            </NavLink>
+
+            <NavLink
+              to="/carlist"
+              
+              className={({isActive}) => isActive ? stylesLinkActive : stylesLink}
+            >
+              Lista samochodów
+            </NavLink>
+          </nav>
+
+          <div className="block md:hidden">
             <button
-              className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
+              className="bg-white mx-4 rounded-xl p-4 transition hover:scale-125"
               onClick={() => setState(!state)}
             >
-              III
+              {state ? <AiOutlineClose /> : <GiHamburgerMenu />}
             </button>
           </div>
         </div>
-        <div
-          className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-            state ? "block" : "hidden"
-          }`}
-        >
-          <ul className="justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-            <li className="text-white hover:text-silver ">
-              <a href="#offer" className="m-auto ">
-                Oferta
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="hidden md:inline-block">
-          <Link
-            to="/carlist"
-            className="bg-grayLavender py-4 px-6 rounded-md shadow text-blackCoffee hover:text-silver"
-          >
-            Przejdź do oferty
-          </Link>
-        </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
