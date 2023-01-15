@@ -2,7 +2,7 @@ import React from "react";
 import ImgCar from "./../../assets/img/cars/vwgolf.jpg";
 import ImgTransport from "./../../assets/img/cars/mercedes-transport.jpg";
 import ImgPremium from "./../../assets/img/cars/ferrari.jpg";
-import Card from "./subcomponents/CardOffer";
+import Card from "../Home/subcomponents/CardOffer";
 
 const Offer = () => {
   return (

@@ -7,6 +7,7 @@ module.exports = {
     colors: {
       'silver': '#c0b7b1',
       'darkgray': '#433e3f',
+      'gray': '#393435',
       'grayLavender': '#c8c6d7',
       'bone': '#d9cab3',
       'white': '#f9f4f5',
