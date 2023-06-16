@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import FaqCard from "./subcomponents/FaqCard";
 
 const data = [
   {
@@ -24,30 +26,34 @@ const data = [
     question: "What features are included?",
     answer:
       "Etiam egestas fringilla enim, id convallis lectus laoreet at Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.",
-  }
+  },
 ];
 
 const Faq = () => {
+  
+
+  
+
   return (
     <div className="bg-white">
-      <div className="space-y-16 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
+      <div className="container px-4 py-16 mx-auto space-y-16 xl:max-w-7xl lg:px-8 lg:py-32">
         <div className="text-center">
-          <div className="text-sm uppercase font-bold tracking-wider mb-1 text-purple-700">
+          <div className="mb-1 text-sm font-bold tracking-wider text-purple-700 uppercase">
             Odpowiadamy na
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+          <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
             Najczęściej zadawane pytania
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {data.map((faq) => (
-            <div className="prose prose-indigo" key={faq.id}>
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
+        <div className="flex flex-col">
+          {data.map((item) => (
+            <div key={item.id} className="mt-10 space-y-3">
+                  <FaqCard question={item.question} answer={item.answer}/> 
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import About from '../pages/About'
 import ContactPage from '../pages/ContactPage'
 import OfferPage from '../pages/OfferPage'
 import PageNotFound from '../components/PageNotFound'
+import Test from '../pages/Test'
 
 
 const Routers = () => {
@@ -16,6 +17,7 @@ const Routers = () => {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<ContactPage/>}/>
         <Route path='/offer' element={<OfferPage/>}/>
+        <Route path='/test' element={<Test/>}/>
         <Route path='/carlist' element={<CarListPage/>}/>
         <Route path='/carlist/:slug' element={<CarDetails/>}/>
         <Route path="*" element={<PageNotFound/>} />
